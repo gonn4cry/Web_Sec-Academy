@@ -1,2 +1,2 @@
-# Web_Sec-Academy
-Web Application  Security Academy Walkthroughs [ Portswigger ]
+# Web Security Academy
+Web Application  Security Academy Walkthroughs [ PortSwigger ]
