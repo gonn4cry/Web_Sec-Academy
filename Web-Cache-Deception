@@ -1,4 +1,0 @@
-# Web Cache Deception is a vulnerability where an attacker tricks a caching system into storing and serving sensitive user specific content as if it were public. This happens when the cache treats a URL as static (like ending in .css), but the backend still returns private data based on the user's session.
-
-“ X-Cache-Status = MISS “ means this page wae Cached by Caching Server.
-“X-Cache-Status = HIT” means this is a Cached response from Caching Server.
