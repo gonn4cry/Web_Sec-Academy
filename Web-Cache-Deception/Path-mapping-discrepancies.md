@@ -41,7 +41,7 @@ You can then craft a URL that returns a dynamic response that is stored in the c
 
 # Lab: Exploiting path mapping for web cache deception
 1. curl 'https://0ada00640380e01585758164009100b5.web-security-academy.net/my-account/abc.css'
-2. Look for caching Headers and sensitives in response
+2. Look for caching Headers and sensitives in response<br>
    cache-control: max-age=30<br>
    age: 0<br>
    x-cache: miss<br>
