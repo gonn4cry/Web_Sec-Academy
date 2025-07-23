@@ -23,6 +23,10 @@ Caches may also implement custom rules based on other criteria, such as URL para
         X-Cache: dynamic - The origin server dynamically generated the content. Generally this means the response is not suitable for caching.
         X-Cache: refresh - The cached content was outdated and needed to be refreshed or revalidated.
     The Cache-Control header may include a directive that indicates caching, like public with a max-age higher than 0. Note that this only suggests that the resource is cacheable. It isn't always indicative of caching, as the cache may sometimes override this header.
+# Exploiting static extension cache rules
 
+Cache rules often target static resources by matching common file extensions like .css or .js. This is the default behavior in most CDNs.
+
+If there are discrepancies in how the cache and origin server map the URL path to resources or use delimiters, an attacker may be able to craft a request for a dynamic resource with a static extension that is ignored by the origin server but viewed by the cache. 
 
 
